@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern Trove - Your Digital Pattern Design Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+    <div class="page-overlay"></div>
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="Pattern Trove Logo">
+                    <span>Pattern Trove</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="patterns.html">All Patterns</a>
+                    <a href="products.html">Products</a>
+                    <a href="about.html">About</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Contact</a>    
+                </div>
+                <div class="nav-extra">
+                    <a href="cart.html" class="nav-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                    <button class="mobile-menu"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 data-text="Design Your Perfect Patterns">Design Your Perfect Patterns</h1>
+                <p>Transform your creative vision into stunning fashion with Pattern Trove. Discover, create, and bring your unique designs to life with our premium pattern collection.</p>
+                <button class="cta-button" onclick="window.location.href='patterns.html'">Explore Collections</button>
+            </div>
+        </section>
+
+        <section class="feature-highlight">
+            <div class="feature-text">
+                <h2>Our Brand</h2>
+                <p>At Pattern Trove, we specialize in creating and selling a wide range of high-quality digital pattern designs for dresses, making it easier for fashion enthusiasts and creators to bring their ideas to life. Our collection features modern, stylish, and versatile digital dress patterns tailored to suit various tastes and skill levels. Whether you're sewing for personal projects or building your own fashion brand, Pattern Trove offers professionally crafted designs that combine creativity with practicality — helping you turn fabric into fashion with confidence.</p>
+                <button class="browse-btn" onclick="window.location.href='products.html'">Browse our products</button>
+            </div>
+            <div class="carousel-container">
+                <button class="carousel-arrow left" aria-label="Previous image">&#10094;</button>
+                <div class="carousel-slide">
+                    <img src="images/dress1.jpg" class="carousel-img" alt="Pattern 1">
+                    <img src="images/dress2.jpg" class="carousel-img" alt="Pattern 2">
+                    <img src="images/dress3.jpg" class="carousel-img" alt="Pattern 3">
+                    <img src="images/dress4.jpg" class="carousel-img" alt="Pattern 4">
+                    <img src="images/dress5.jpg" class="carousel-img" alt="Pattern 5">
+                    <img src="images/dress6.jpg" class="carousel-img" alt="Pattern 6">
+                    <img src="images/dress7.jpg" class="carousel-img" alt="Pattern 7">
+                    <img src="images/dress8.jpg" class="carousel-img" alt="Pattern 8">
+                    <img src="images/dress9.jpg" class="carousel-img" alt="Pattern 9">
+                    <img src="images/dress10.jpg" class="carousel-img" alt="Pattern 10">
+                </div>
+                <button class="carousel-arrow right" aria-label="Next image">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="popular-patterns">
+            <h2>Popular Patterns</h2>
+            <div class="pattern-grid">
+                <div class="pattern-card">
+                    <img src="images/dress11.jpg" alt="Pattern 1">
+                    <h3>Summer Dress</h3>
+                    <p>Perfect for warm days</p>
+                </div>
+                <div class="pattern-card">
+                    <img src="images/dress12.jpg" alt="Pattern 2">
+                    <h3>Casual Blazer</h3>
+                    <p>Professional and stylish</p>
+                </div>
+                <div class="pattern-card">
+                    <img src="images/dress13.jpg" alt="Pattern 3">
+                    <h3>Evening Gown</h3>
+                    <p>Elegant and timeless</p>
+                </div>
+                <div class="pattern-card">
+                    <img src="images/dress14.jpg" alt="Pattern 4">
+                    <h3>Pant</h3>
+                    <p>Everyday classic</p>
+                </div>
+                <div class="pattern-card">
+                    <img src="images/dress15.jpg" alt="Pattern 5">
+                    <h3>Sweat Pant</h3>
+                    <p>Loungewear that levels up your look</p>
+                </div>
+                <div class="pattern-card">
+                    <img src="images/dress16.jpg" alt="Pattern 6">
+                    <h3>Kurti</h3>
+                    <p>Your graceful style</p>
+                </div>
+            </div>
+            <div class="scroll-buttons">
+                <button class="scroll-button left" onclick="scrollPatterns('left')">❮</button>
+                <button class="scroll-button right" onclick="scrollPatterns('right')">❯</button>
+            </div>
+        </section>
+
+        <section class="get-in-touch">
+            <div class="get-in-touch-container">
+                <div class="get-in-touch-image">
+                <img src="images/logo.jpg" alt="Customer Reviews">
+                </div>
+                <div class="get-in-touch-content">
+                <h2>Customer Reviews</h2>
+                <p>See what our customers are saying about their experience with Pattern Trove. Join our community of satisfied designers and creators.</p>
+
+                <!-- Add form tag and ID here -->
+                <form id="review-form" class="contact-form">
+                    <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="user_email">Your Email</label>
+                    <input type="email" id="user_email" name="user_email" placeholder="Your Email" required>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="rating">Rating</label>
+                    <select id="rating" name="rating" required>
+                        <option value="">Select Rating</option>
+                        <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                        <option value="4">⭐⭐⭐⭐ Very Good</option>
+                        <option value="3">⭐⭐⭐ Good</option>
+                        <option value="2">⭐⭐ Fair</option>
+                        <option value="1">⭐ Poor</option>
+                    </select>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="message">Your Review</label>
+                    <textarea id="message" name="message" required placeholder="Share your experience with our patterns..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Review</button>
+                </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pattern Trove</h3>
+                <p>Creating beautiful patterns for your clothing designs since 2023.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/people/Pattern-Trove/100092225799246/" class="social-icon"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i>Home</a></li>
+                    <li><a href="about.html" class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="patterns.html" class="footer-link"><i class="fas fa-chevron-right"></i>All Patterns</a></li>
+                    <li><a href="products.html" class="footer-link"><i class="fas fa-chevron-right"></i>Products</a></li>
+                    <li><a href="faq.html" class="footer-link"><i class="fas fa-chevron-right"></i>FAQ</a></li>
+                    <li><a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul class="contact-info">
+                    <li class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="#patternmaker096@gmail.com">patternmaker096@gmail.com</a>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:074 265 9484">074 265 9484</a>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Colombo, Sri Lanka</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Working Hours</h4>
+                <ul class="working-hours">
+                    <li>
+                        <span class="day">Monday - Friday</span>
+                        <span class="hours">24 hrs</span>
+                    </li>
+                    <li>
+                        <span class="day">Saturday</span>
+                        <span class="hours">24 hrs</span>
+                    </li>
+                    <li>
+                        <span class="day">Sunday</span>
+                        <span class="hours">24 hrs</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pattern Trove. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="cookie.html">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+    window.addEventListener('scroll', function() {
+        // Parallax background
+        document.body.style.backgroundPositionY = -(window.scrollY * 0.7) + 'px';
+        // Parallax overlay (scrolls at a different rate)
+        document.querySelector('.page-overlay').style.top = (window.scrollY * 0.2) + 'px';
+    });
+    </script>
+    <script>
+    // Carousel with navigation arrows and auto-slide
+    const slides = document.querySelectorAll('.carousel-img');
+    const leftArrow = document.querySelector('.carousel-arrow.left');
+    const rightArrow = document.querySelector('.carousel-arrow.right');
+    let currentSlide = 0;
+    let carouselInterval;
+
+    function showSlide(idx) {
+        slides.forEach((img, i) => {
+            img.style.display = i === idx ? 'block' : 'none';
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    function startCarousel() {
+        carouselInterval = setInterval(nextSlide, 2500);
+    }
+
+    function stopCarousel() {
+        clearInterval(carouselInterval);
+    }
+
+    leftArrow.addEventListener('click', () => {
+        stopCarousel();
+        prevSlide();
+        startCarousel();
+    });
+    rightArrow.addEventListener('click', () => {
+        stopCarousel();
+        nextSlide();
+        startCarousel();
+    });
+
+    // Initialize
+    showSlide(currentSlide);
+    startCarousel();
+    </script>
+
+    <script>
+    // Horizontal scrolling for patterns
+    function scrollPatterns(direction) {
+        const container = document.querySelector('.pattern-grid');
+        const scrollAmount = 320; // card width + gap
+        
+        if (direction === 'left') {
+            container.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        } else {
+            container.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    // Touch scrolling for mobile
+    const patternGrid = document.querySelector('.pattern-grid');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    patternGrid.addEventListener('mousedown', (e) => {
+        isDown = true;
+        patternGrid.style.cursor = 'grabbing';
+        startX = e.pageX - patternGrid.offsetLeft;
+        scrollLeft = patternGrid.scrollLeft;
+    });
+
+    patternGrid.addEventListener('mouseleave', () => {
+        isDown = false;
+        patternGrid.style.cursor = 'grab';
+    });
+
+    patternGrid.addEventListener('mouseup', () => {
+        isDown = false;
+        patternGrid.style.cursor = 'grab';
+    });
+
+    patternGrid.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - patternGrid.offsetLeft;
+        const walk = (x - startX) * 2;
+        patternGrid.scrollLeft = scrollLeft - walk;
+    });
+    </script>
+    <!-- EmailJS SDK -->
+    <script>
+    (function() {
+        emailjs.init("FVVVsbfDRkTkxlnFS"); // Replace with your EmailJS User ID
+    })();
+
+    document.getElementById("review-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        emailjs.sendForm("service_fmv0ywg", "template_bwn6dak", this)
+        .then(function() {
+            alert("✅ Review sent successfully!");
+            document.getElementById("review-form").reset();
+        }, function(error) {
+            alert("❌ Failed to send review. Error: " + error.text);
+        });
+    });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html> 

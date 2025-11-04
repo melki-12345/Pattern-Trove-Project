@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Pattern Trove</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* FAQ Content */
+        body{
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            position: relative;
+            background-color: #f8f8f8;
+            background-image: url('https://i.pinimg.com/736x/5b/f6/56/5bf656d5681b1cfe5784e041d0aac80e.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+       .faq-header {
+        text-align: center;
+        padding: 4rem 2rem 2rem;
+        background: linear-gradient(135deg, #f77722, #fda970);
+        color: white;
+        border-bottom-left-radius: 60px;
+        border-bottom-right-radius: 60px;
+        }
+
+        .faq-header h1 {
+        font-size: 3rem;
+        margin: 0;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .faq-header i {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: white;
+        }
+
+        .faq-container.with-image {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            justify-content: center;
+            padding: 0 1.5rem;
+            max-width: 1000px;
+            margin: 3rem auto;
+        }
+
+        .faq-side-image {
+            width: 500px;
+            height: 500px;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .faq-content-wrapper {
+            flex: 1;
+        }
+
+
+        .faq-item {
+        background-color: #fff;
+        border-radius: 15px;
+        margin-bottom: 1.2rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        }
+
+        .faq-question {
+        padding: 1.2rem 1.5rem;
+        cursor: pointer;
+        background: #fff5eb;
+        font-weight: 700;
+        color: #a0360c;
+        font-size: 1.1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+        background: #ffe6d1;
+        }
+
+        .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 1.5rem;
+        color: #555;
+        transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+        max-height: 300px;
+        padding: 1rem 1.5rem 1.5rem;
+        }
+
+        .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+        }
+
+        .faq-question i {
+        transition: transform 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .faq-header h1 {
+                font-size: 2rem;
+            }
+
+            .faq-question {
+                font-size: 1rem;
+            }
+        }
+  </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="Pattern Trove Logo">
+                    <span>Pattern Trove</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="patterns.html">All Patterns</a>
+                    <a href="products.html">Products</a>
+                    <a href="about.html">About</a>
+                    <a href="faq.html" class="active">FAQ</a>
+                    <a href="contact.html">Contact</a>    
+                </div>
+                <button class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Header -->
+  <section class="faq-header">
+    <i class="fas fa-question-circle"></i>
+    <h1>Frequently Asked Questions</h1>
+  </section>
+
+  <!-- FAQ Content -->
+  <section class="faq-container with-image">
+  <img src="https://i.pinimg.com/736x/ba/13/f7/ba13f72e40a057aec42c6edc91c2c263.jpg" alt="FAQ Icon" class="faq-side-image" />
+  <div class="faq-content-wrapper">
+    <div class="faq-item">
+      <div class="faq-question">
+        How do I download?
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Once you purchase a pattern, you’ll receive an email with a secure download link. You can also access it from your account dashboard.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        What sizes are included?
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Most patterns include sizes from XS to XL. Specific sizing charts are listed on each product page.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Can I sell what I make?
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Yes, you're welcome to sell physical items you create using our patterns, as long as the digital patterns themselves are not shared or sold.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Do you offer refunds?
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Since our patterns are digital downloads, we unfortunately cannot offer refunds. Be sure to read product descriptions carefully before buying.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How do I print the pattern?
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        You can print at home using A4 or Letter-size paper. Instructions for assembly are included. For large-scale printing, A0 files are also provided.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        Can I customize the patterns?
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        Yes, you are welcome to adjust or modify the patterns to suit your specific style or project needs. Whether it's resizing, changing elements, or combining pieces, we encourage creativity and personalization.
+      </div>
+    </div>
+   </div>
+  </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pattern Trove</h3>
+                <p>Creating beautiful patterns for your clothing designs since 2023.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/people/Pattern-Trove/100092225799246/" class="social-icon"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i>Home</a></li>
+                    <li><a href="about.html" class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="patterns.html" class="footer-link"><i class="fas fa-chevron-right"></i>All Patterns</a></li>
+                    <li><a href="products.html" class="footer-link"><i class="fas fa-chevron-right"></i>Products</a></li>
+                    <li><a href="faq.html" class="footer-link"><i class="fas fa-chevron-right"></i>FAQ</a></li>
+                    <li><a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul class="contact-info">
+                    <li class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="#patternmaker096@gmail.com">patternmaker096@gmail.com</a>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:074 265 9484">074 265 9484</a>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Colombo, Sri Lanka</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Working Hours</h4>
+                <ul class="working-hours">
+                    <li>
+                        <span class="day">Monday - Friday</span>
+                        <span class="hours">24 hrs</span>
+                    </li>
+                    <li>
+                        <span class="day">Saturday</span>
+                        <span class="hours">24 hrs</span>
+                    </li>
+                    <li>
+                        <span class="day">Sunday</span>
+                        <span class="hours">24 hrs</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pattern Trove. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="cookie.html">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Accordion Script -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => {
+            const item = q.parentElement;
+            item.classList.toggle('active');
+
+            // Close others
+            document.querySelectorAll('.faq-item').forEach(el => {
+            if (el !== item) el.classList.remove('active');
+            });
+        });
+        });
+    </script>
+</body>
+</html>

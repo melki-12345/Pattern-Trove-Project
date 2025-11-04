@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Patterns - Pattern Trove</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            position: relative;
+            background-color: #f8f8f8;
+            background-image: url("https://i.pinimg.com/736x/2c/8b/39/2c8b39b15db1f5dcab6566e56b5b099b.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;    
+        }
+        
+        /* Filter Styles */
+        .patterns-filters {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.1);
+            margin: 0 2rem 2.5rem;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .filters-container {
+            display: flex;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .filter-group label {
+            font-weight: 600;
+            color: #c24d16;
+            font-size: 1rem;
+        }
+        .filter-group select {
+            padding: 0.7rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: #fff;
+            font-size: 1rem;
+            color: #333;
+            min-width: 180px;
+        }
+
+        /* Uniform Grid Styles */
+        .patterns-grid-section {
+            padding: 0 2rem 2rem;
+        }
+
+        .patterns-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .pattern-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .pattern-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+        }
+
+        .pattern-card .pattern-image-container {
+            width: 100%;
+            padding-top: 125%; /* 4:5 aspect ratio */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pattern-card img.main-pattern-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pattern-info {
+            padding: 1rem 1.2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .pattern-title-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 0.75rem;
+        }
+        
+        .pattern-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #c24d16;
+            margin: 0;
+        }
+
+        .pattern-price {
+            color: #6e3407;
+            font-weight: 600;
+            font-size: 1.05rem;
+            white-space: nowrap;
+            margin-left: 1rem;
+        }
+
+        .details-btn, .see-more-btn {
+            background: #ebb694;
+            color: rgb(122, 43, 29);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+            width: 100%;
+            margin-top: auto;
+        }
+        .details-btn:hover, .see-more-btn:hover {
+            background-color: #df916d;
+            transform: translateY(-2px);
+        }
+
+        .pattern-desc {
+            display: none;
+            margin-top: 1rem;
+            color: #6e3407;
+            font-size: 0.9rem;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 1rem;
+            line-height: 1.5;
+        }
+        
+        .see-more-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .see-more-btn {
+            width: auto;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/logo.jpg" alt="Pattern Trove Logo">
+                    <span>Pattern Trove</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="patterns.html" class="active">All Patterns</a>
+                    <a href="products.html">Products</a>
+                    <a href="about.html">About</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Contact</a>    
+                </div>
+                <button class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="patterns-hero">
+            <div class="patterns-hero-content">
+                <span class="patterns-hero-scissors"><i class="fas fa-scissors"></i></span>
+                <h1>All Patterns</h1>
+                <p>Discover inspiration in our curated gallery of patterns.</p>
+            </div>
+        </section>
+
+        <section class="patterns-filters">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option value="all">All</option>
+                        <option value="women">Women</option>
+                        <option value="men">Men</option>
+                        <option value="kids">Kids</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="type">Type</label>
+                    <select id="type">
+                        <option value="all">All</option>
+                        <option value="dress">Dress</option>
+                        <option value="top">Top</option>
+                        <option value="bottom">Bottom</option>
+                        <option value="Office Wear">Office Wear</option>
+                        <option value="underwear">Underwear</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort">Sort By</label>
+                    <select id="sort">
+                        <option value="newest">Newest</option>
+                        <option value="bestsellers">Best Sellers</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="patterns-grid-section">
+            <div class="patterns-grid" id="patternsGrid">
+                <!-- Patterns will be rendered here by JS -->
+            </div>
+            <div class="see-more-container" id="seeMoreContainer">
+                <!-- "See More" button will be rendered here -->
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pattern Trove</h3>
+                <p>Creating beautiful patterns for your clothing designs since 2023.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/people/Pattern-Trove/100092225799246/" class="social-icon"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html" class="footer-link"><i class="fas fa-chevron-right"></i>Home</a></li>
+                    <li><a href="about.html" class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="patterns.html" class="footer-link"><i class="fas fa-chevron-right"></i>All Patterns</a></li>
+                    <li><a href="products.html" class="footer-link"><i class="fas fa-chevron-right"></i>Products</a></li>
+                    <li><a href="faq.html" class="footer-link"><i class="fas fa-chevron-right"></i>FAQ</a></li>
+                    <li><a href="contact.html" class="footer-link"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <ul class="contact-info">
+                    <li class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="#patternmaker096@gmail.com">patternmaker096@gmail.com</a>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:074 265 9484">074 265 9484</a>
+                    </li>
+                    <li class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Colombo, Sri Lanka</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Working Hours</h4>
+                <ul class="working-hours">
+                    <li>
+                        <span class="day">Monday - Friday</span>
+                        <span class="hours">24 hrs</span>
+                    </li>
+                    <li>
+                        <span class="day">Saturday</span>
+                        <span class="hours">24 hrs</span>
+                    </li>
+                    <li>
+                        <span class="day">Sunday</span>
+                        <span class="hours">24 hrs</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pattern Trove. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="cookie.html">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+    const patterns = [
+        // --- Women's Patterns ---
+
+        // Women's - Dresses
+        {
+            title: 'Summer Dress',
+            price: 12.00,
+            category: 'women',
+            type: 'dress',
+            images: { front: 'images/dress11.jpg' },
+            newest: true,
+            bestsellers: true,
+            description: 'A light and breezy summer dress, perfect for warm days and outdoor events.<br>Fit: (e.g., bodycon, A-line, loose fit)<br> Length: (e.g., midi, maxi, knee-length)<br>Occasion: (e.g., formal, party, casual, workwear)<br>Design features: (e.g., puff sleeves, ruffles, open back, belt)<br>Closures: (e.g., zip, buttons, tie-back)',
+        },
+        {
+            title: 'Evening Gown',
+            price: 18.00,
+            category: 'women',
+            type: 'dress',
+            images: { front: 'images/dress13.jpg' },
+            newest: false,
+            bestsellers: true,
+            description: 'An elegant evening gown with a timeless silhouette, perfect for formal occasions.<br>Fit: (e.g., bodycon, A-line, loose fit)<br> Length: (e.g., midi, maxi, knee-length)<br>Occasion: (e.g., formal, party, casual)<br>Design features: (e.g., puff sleeves, ruffles, open back, belt)<br>Closures: (e.g., zip, buttons, tie-back)',
+        },
+        {
+            title: 'Long frock',
+            price: 14.00,
+            category: 'women',
+            type: 'dress',
+            images: { front: 'images/dress3.jpg' },
+            newest: true,
+            bestsellers: false,
+            description: 'A flowing long frock, perfect for summer outings and garden parties. <br>Fit: (e.g., bodycon, A-line, loose fit)<br> Length: (e.g., midi, maxi, knee-length)<br>Occasion: (e.g., formal, party, casual)<br>Design features: (e.g., puff sleeves, ruffles, open back, belt)<br>Closures: (e.g., zip, buttons, tie-back)',
+        },
+        {
+            title: 'Casual frock',
+            price: 18.00,
+            category: 'women',
+            type: 'dress',
+            images: { front: 'images/dress2.jpg' },
+            newest: false,
+            bestsellers: true,
+            description: 'A casual frock with a relaxed fit for everyday comfort. <br>Fit: (e.g., bodycon, A-line, loose fit)<br> Length: (e.g., midi, maxi, knee-length)<br>Occasion: (e.g., formal, party, casual)<br>Design features: (e.g., puff sleeves, ruffles, open back, belt)<br>Closures: (e.g., zip, buttons, tie-back)',
+        },
+        {
+            title: 'Party frock',
+            price: 13.00,
+            category: 'women',
+            type: 'dress',
+            images: { front: 'images/dress1.jpg' },
+            newest: true,
+            bestsellers: true,
+            description: 'A fun and flirty party frock, great for celebrations and special events. <br>Fit: (e.g., bodycon, A-line, loose fit)<br> Length: (e.g., midi, maxi, knee-length)<br>Occasion: (e.g., formal, party, casual)<br>Design features: (e.g., puff sleeves, ruffles, open back, belt)<br>Closures: (e.g., zip, buttons, tie-back)',
+        },
+        
+        // Women's - Tops
+        {
+            title: 'Kurti',
+            price: 13.00,
+            category: 'women',
+            type: 'top',
+            images: { front: 'images/dress16.jpg' },
+            newest: false,
+            bestsellers: false,
+            description: 'A graceful kurti with modern patterns, suitable for both work and casual outings.<br>Fit: (e.g., bodycon, A-line, loose fit)<br> Size: (e.g., XS, S, M, L, XL, XXL)<br>Occasion: (e.g., formal, party, casual)<br>Design features: (e.g., puff sleeves, ruffles, open back, belt)<br>Closures: (e.g., zip, buttons, tie-back)',
+        },
+        {
+            title: 'Casual T-shirt',
+            price: 14.00,
+            category: 'women',
+            type: 'top',
+            images: { front: 'images/dress10.jpg' },
+            newest: true,
+            bestsellers: false,
+            description: 'A comfortable and trendy t-shirt for everyday wear.<br>Fit: (e.g., bodycon, loose fit)<br> Size: (e.g., XS, S, M, L, XL, XXL)<br>Occasion: (e.g., formal, casual)',
+        },
+        {
+            title: 'White blouse',
+            price: 15.00,
+            category: 'women',
+            type: 'top',
+            images: { front: 'images/dress9.jpg' },
+            newest: true,
+            bestsellers: true,
+            description: 'A crisp white blouse that pairs well with any skirt or pants.<br>Fit: (e.g., bodycon, loose fit)<br> Size: (e.g., XS, S, M, L, XL, XXL)<br>Occasion: (e.g., formal, casual)',
+        },
+        {
+            title: 'Red blouse',
+            price: 16.00,
+            category: 'women',
+            type: 'top',
+            images: { front: 'images/dress8.jpg' },
+            newest: false,
+            bestsellers: true,
+            description: 'A bold red blouse to add a pop of color to your wardrobe.<br>Fit: (e.g., bodycon, loose fit)<br> Size: (e.g., midi, maxi, knee-length)<br>Occasion: (e.g., formal, party, casual)<br>Design features: (e.g., puff sleeves, ruffles, open back, belt)<br>Closures: (e.g., zip, buttons, tie-back)',
+        },
+
+        // Women's - Bottoms
+        {
+            title: 'Pant',
+            price: 10.00,
+            category: 'women',
+            type: 'bottom',
+            images: { front: 'images/dress14.jpg' },
+            newest: false,
+            bestsellers: false,
+            description: 'Classic straight-leg pants for everyday comfort and style.<br>Fit: (e.g., bodycon, loose fit)<br> Size: (e.g.,XS, S, M, L, XL, XXL)<br>Occasion: (e.g., formal, casual, workwear)',
+        },
+        {
+            title: 'Sweat Pant',
+            price: 11.00,
+            category: 'women',
+            type: 'bottom',
+            images: { front: 'images/dress15.jpg' },
+            newest: true,
+            bestsellers: true,
+            description: 'Soft and cozy sweat pants, perfect for lounging or casual wear.<br>Fit: (e.g., loose fit)<br> Size: (e.g.,XS, S, M, L, XL, XXL)<br>Occasion: (e.g., casual)',
+        },
+        {
+            title: 'Ladies office pants',
+            price: 14.00,
+            category: 'women',
+            type: 'bottom',
+            images: { front: 'images/dress5.jpg' },
+            newest: true,
+            bestsellers: true,
+            description: 'Tailored office pants for a polished and professional look.<br>Fit: (e.g.,loose fit)<br> Size: (e.g., XS, S, M, L, XL, XXL)<br>Occasion: (e.g., formal, casual)',
+        },
+
+        // Women's - Office Wear
+        {
+            title: 'Casual Blazer',
+            price: 15.00,
+            category: 'women',
+            type: 'Office Wear',
+            images: { front: 'images/dress12.jpg' },
+            newest: true,
+            bestsellers: false,
+            description: 'A stylish blazer for a professional yet relaxed look, ideal for office or casual outings.<br>Fit: (e.g., bodycon, loose fit)<br> Size: (e.g., XS, S, M, L, XL, XXL)<br>Occasion: (e.g., formal, casual, workwear)<br>Design features: (e.g., Long sleeves)',
+        },
+        {
+            title: 'Ladies office wear',
+            price: 14.00,
+            category: 'women',
+            type: 'Office Wear',
+            images: { front: 'images/dress4.jpg' },
+            newest: false,
+            bestsellers: true,
+            description: 'A complete office wear set for a confident and stylish workday.<br>Fit: (e.g., bodycon, loose fit)<br>Occasion: (e.g., formal, casual)',
+        },
+
+        // Women's - Underwear
+        {
+            title: 'Ladies underwear',
+            price: 10.00,
+            category: 'women',
+            type: 'underwear',
+            images: { front: 'images/dress7.jpg' },
+            newest: false,
+            bestsellers: false,
+            description: 'Comfortable and supportive underwear for everyday use.<br>Fit: (e.g., bodycon, A-line, loose fit)<br> Size: (e.g., XS, S, M, L, XL, XXL)<br>Occasion: (e.g., formal, casual)<br>Design features: (e.g., puff sleeves)',
+        },
+        {
+            title: 'Ladies brasier',
+            price: 11.00,
+            category: 'women',
+            type: 'underwear',
+            images: { front: 'images/dress6.jpg' },
+            newest: true,
+            bestsellers: false,
+            description: 'A soft and stylish brasier for all-day comfort.<br>Fit: (e.g., bodycon, loose fit)<br> Size: (e.g., XS, S, M, L, XL, XXL)',
+        },
+
+        // --- Men's Patterns ---
+
+        // Men's - Tops
+        {
+            title: "Men's Shirt",
+            price: 12.00,
+            category: 'men',
+            type: 'top',
+            images: { front: 'images/dress17.jpg' },
+            newest: true,
+            bestsellers: false,
+            description: 'A classic men\'s shirt, suitable for both formal and casual occasions.<br>Fit: (e.g., bodycon, loose fit)<br> Size: (e.g., XS, S, M, L, XL, XXL)<br>Occasion: (e.g., formal, casual)',
+        },
+        {
+            title: "Men's long sleeve shirt",
+            price: 13.00,
+            category: 'men',
+            type: 'top',
+            images: { front: 'images/dress18.jpg' },
+            newest: false,
+            bestsellers: true,
+            description: 'A stylish long sleeve shirt for men, perfect for cooler days.<br>Fit: (e.g., bodycon, loose fit)<br> Size: (e.g., XS, S, M, L, XL, XXL)<br>Occasion: (e.g., formal, casual)',
+        },
+        {
+            title: "Men's t-shirt",
+            price: 13.00,
+            category: 'men',
+            type: 'top',
+            images: { front: 'images/dress20.jpg' },
+            newest: false,
+            bestsellers: false,
+            description: 'A casual t-shirt for men, made from soft and breathable fabric.<br>Fit: (e.g., bodycon, loose fit)<br> Size: (e.g., XS, S, M, L, XL, XXL)<br>Occasion: (e.g., formal, casual)',
+        },
+
+        // Men's - Bottoms
+        {
+            title: "Men's trouser",
+            price: 15.00,
+            category: 'men',
+            type: 'bottom',
+            images: { front: 'images/dress19.jpg' },
+            newest: true,
+            bestsellers: true,
+            description: 'Comfortable and versatile trousers for men, ideal for any occasion.<br>Fit: (e.g., bodycon, loose fit)<br> Size: (e.g., XS, S, M, L, XL, XXL)<br>Occasion: (e.g., formal, casual)',
+        },
+
+        // --- Kids' Patterns ---
+
+        // Kids' - Dresses
+        {
+            title: "kid's Princess Dress",
+            price: 12.00,
+            category: 'kids',
+            type: 'dress',
+            images: { front: 'https://i.pinimg.com/736x/6c/64/1f/6c641f43ca011c530fadd6d83a47ea63.jpg' },
+            newest: true,
+            bestsellers: true,
+            description: 'A beautiful princess dress with tulle skirt and sparkling bodice, perfect for parties and special occasions.<br>Fit: (e.g., bodycon, A-line, loose fit)<br> Length: (e.g., midi, maxi, knee-length)<br>Occasion: (e.g., formal, party, casual)<br>Design features: (e.g., puff sleeves, ruffles, open back, belt)<br>Closures: (e.g., zip, buttons, tie-back)',
+        },
+        {
+            title: "Kid's Floral Party Dress",
+            price: 14.00,
+            category: 'kids',
+            type: 'dress',
+            images: { front: 'https://i.pinimg.com/736x/37/b8/45/37b8459319ea9f481dff9c493bd82b37.jpg' },
+            newest: true,
+            bestsellers: false,
+            description: 'A vibrant floral party dress designed for comfort and style, featuring a soft cotton lining.<br>Fit: (e.g., bodycon, A-line, loose fit)<br> Length: (e.g., midi, maxi, knee-length)<br>Occasion: (e.g., formal, party, casual)<br>Design features: (e.g., puff sleeves, ruffles, open back, belt)<br>Closures: (e.g., zip, buttons, tie-back)',
+        },
+        {
+            title: "kid's Summer Frock",
+            price: 11.00,
+            category: 'kids',
+            type: 'dress',
+            images: { front: 'https://i.pinimg.com/736x/81/99/0b/81990b03bb431c55beaf1e584b104d85.jpg' },
+            newest: false,
+            bestsellers: true,
+            description: 'Lightweight and breezy summer frock for playful days, with a cute bow accent.<br>Fit: (e.g., bodycon, A-line, loose fit)<br> Length: (e.g., midi, maxi, knee-length)<br>Occasion: (e.g., formal, party, casual)<br>Design features: (e.g., puff sleeves, ruffles, open back, belt)<br>Closures: (e.g., zip, buttons, tie-back)',
+        },
+        {
+            title: "Boy's Casual Dress",
+            price: 10.00,
+            category: 'kids',
+            type: 'dress',
+            images: { front: 'https://i.pinimg.com/736x/fe/18/1f/fe181f9f90db20128ade78a254f77c9b.jpg' },
+            newest: true,
+            bestsellers: false,
+            description: 'A casual dress for boys, ideal for everyday wear and comfort, made from soft, durable fabric.<br>Fit: (e.g., bodycon, loose fit)<br> Size: (e.g., XS, S, M, L, XL, XXL)<br>Occasion: (e.g., formal, casual)',
+        },
+        {
+            title: "kid's Birthday Dress",
+            price: 15.00,
+            category: 'kids',
+            type: 'dress',
+            images: { front: 'https://i.pinimg.com/736x/90/ea/1b/90ea1b1ebf7a47ba1d042615b86c6109.jpg' },
+            newest: true,
+            bestsellers: true,
+            description: 'A festive birthday dress with colorful prints and a twirl-worthy skirt to make your child feel special.<br>Fit: (e.g., bodycon, A-line, loose fit)<br> Length: (e.g., midi, maxi, knee-length)<br>Occasion: (e.g., formal, party, casual)<br>Design features: (e.g., puff sleeves, ruffles, open back, belt)<br>Closures: (e.g., zip, buttons, tie-back)',
+        },
+    ];
+
+    const grid = document.getElementById('patternsGrid');
+    const seeMoreContainer = document.getElementById('seeMoreContainer');
+    const categoryFilter = document.getElementById('category');
+    const typeFilter = document.getElementById('type');
+    const sortFilter = document.getElementById('sort');
+
+    const itemsPerPage = 12;
+    let isShowingAll = false;
+
+    function renderPatterns() {
+        let filteredPatterns = [...patterns];
+
+        // Filtering Logic
+        const category = categoryFilter.value;
+        if (category !== 'all') {
+            filteredPatterns = filteredPatterns.filter(p => p.category === category);
+        }
+
+        const type = typeFilter.value;
+        if (type !== 'all') {
+            filteredPatterns = filteredPatterns.filter(p => p.type === type);
+        }
+
+        // Sorting Logic
+        const sort = sortFilter.value;
+        if (sort === 'newest') {
+            filteredPatterns.sort((a, b) => b.newest - a.newest);
+        } else if (sort === 'bestsellers') {
+            filteredPatterns.sort((a, b) => b.bestsellers - a.bestsellers);
+        } else if (sort === 'price-low') {
+            filteredPatterns.sort((a, b) => a.price - b.price);
+        } else if (sort === 'price-high') {
+            filteredPatterns.sort((a, b) => b.price - a.price);
+        }
+
+        const itemsWithOriginalIndex = filteredPatterns.map((p, i) => {
+             const originalIndex = patterns.indexOf(p);
+             return { ...p, originalIndex };
+        });
+
+        const displayedItems = isShowingAll ? itemsWithOriginalIndex : itemsWithOriginalIndex.slice(0, itemsPerPage);
+
+        grid.innerHTML = displayedItems.map(p => `
+            <div class="pattern-card">
+                <div class="pattern-image-container">
+                    <img src="${p.images.front}" alt="${p.title}" class="main-pattern-img">
+                </div>
+                <div class="pattern-info">
+                    <div class="pattern-title-price">
+                        <h3>${p.title}</h3>
+                        <span class="pattern-price">$${p.price.toFixed(2)}</span>
+                    </div>
+                    <button class="details-btn" data-idx="${p.originalIndex}">View Details</button>
+                    <div class="pattern-desc" id="desc-${p.originalIndex}">${p.description || ''}</div>
+                </div>
+            </div>
+        `).join('');
+
+        seeMoreContainer.innerHTML = '';
+        if (filteredPatterns.length > itemsPerPage) {
+            const buttonText = isShowingAll ? 'See Less' : `See More (${filteredPatterns.length - itemsPerPage} more)`;
+            seeMoreContainer.innerHTML = `<button class="see-more-btn">${buttonText}</button>`;
+            
+            seeMoreContainer.querySelector('.see-more-btn').addEventListener('click', () => {
+                isShowingAll = !isShowingAll;
+                renderPatterns();
+            });
+        }
+        
+        document.querySelectorAll('.details-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const idx = this.dataset.idx;
+                const desc = document.getElementById('desc-' + idx);
+                if (desc) {
+                    const isHidden = desc.style.display === 'none' || desc.style.display === '';
+                    desc.style.display = isHidden ? 'block' : 'none';
+                    this.textContent = isHidden ? 'Hide Details' : 'View Details';
+                }
+            });
+        });
+    }
+    
+    [categoryFilter, typeFilter, sortFilter].forEach(el => {
+        el.addEventListener('change', () => {
+            isShowingAll = false;
+            renderPatterns();
+        });
+    });
+
+    renderPatterns();
+    </script>
+</body>
+</html> 
